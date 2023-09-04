@@ -30,8 +30,10 @@ public class Producto {
 
     private String fechaIngreso;
 
+    private UUID idUsuario;
+
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuarioId")
     private Usuario usuario;
 
     public UUID getId() {
@@ -60,6 +62,14 @@ public class Producto {
 
     public String getFechaIngreso() {
         return fechaIngreso;
+    }
+
+    public void setIdUsuario(UUID id) {
+        this.idUsuario = id;
+    }
+
+    public UUID getIdUsuario() {
+        return idUsuario;
     }
 
     public void setUsuario(Usuario usuario) {

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.inventario.inventario.DTOs.ProductoDto;
 import com.api.inventario.inventario.entities.Producto;
 import com.api.inventario.inventario.interfaces.IProducto;
 
@@ -29,7 +30,7 @@ public class ProductoController {
     private IProducto productoService;
 
     @GetMapping("/getAll")
-    public List<Producto> getProductos() {
+    public List<ProductoDto> getProductos() {
         return productoService.findAll();
     }
 

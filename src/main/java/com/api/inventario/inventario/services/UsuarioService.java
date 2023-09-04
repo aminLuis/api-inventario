@@ -1,6 +1,7 @@
 package com.api.inventario.inventario.services;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,11 @@ public class UsuarioService implements IUsuario {
     @Override
     public List<Usuario> findAll() {
         return (List<Usuario>) usuarioRepositoryDao.findAll();
+    }
+
+    @Override
+    public Usuario findById(UUID id) {
+        return usuarioRepositoryDao.findById(id).orElseThrow(null);
     }
 
 }
